@@ -18,27 +18,31 @@ public class TennisGame1 implements TennisGame {
             m_score2 += 1;
     }
 
+    private String getTieScore() {
+        switch (m_score1) {
+            case 0:
+                    return "Love-All";
+            case 1:
+                    return "Fifteen-All";
+            case 2:
+                    return "Thirty-All";
+            default:
+                    return "Deuce";            
+        }
+    }
+
+    private String[] scoreNames = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
+
     public String getScore() {
+
+    }
+
+    public String getScoreOld() {
         String score = "";
         int tempScore=0;
         if (m_score1==m_score2)
         {
-            switch (m_score1)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-                default:
-                        score = "Deuce";
-                    break;
-                
-            }
+            
         }
         else if (m_score1>=4 || m_score2>=4)
         {
